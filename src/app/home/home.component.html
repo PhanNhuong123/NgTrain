@@ -1,9 +1,24 @@
 <h2>List Staffs</h2>
 <ul class="staffs">
-    <li *ngFor="let staff of staffs " >
-      <button>
-          <span class="badage"> {{ staff.id }} </span>
-          <span class="name"> {{ staff.name}} </span>
-      </button>
-    </li>
+  <li *ngFor="let staff of staffs">
+    <button [class.selected]="staff === SelectStaff" (click)="onSelect(staff)">
+      <span class="badage"> {{ staff.id }} </span>
+      <span class="name"> {{ staff.name }} </span>
+    </button>
+  </li>
 </ul>
+<div class="staff-detail">
+  <div *ngIf="SelectStaff">
+    <h2>{{ SelectStaff.name | uppercase }} Detail :</h2>
+    <div>id : {{ SelectStaff.id }}</div>
+    <div>
+      <label for="staff-name">Staff name: </label>
+      <input
+        type="text"
+        id="staff-name"
+        placeholder="name"
+        [(ngModel)]="SelectStaff.name"
+      />
+    </div>
+  </div>
+</div>

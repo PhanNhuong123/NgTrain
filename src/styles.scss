@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -11,7 +11,8 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
-h2, h3 {
+h2,
+h3 {
   color: #444;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
@@ -19,7 +20,9 @@ h2, h3 {
 body {
   margin: 2em;
 }
-body, input[type="text"], button {
+body,
+input[type="text"],
+button {
   color: #333;
   font-family: Cambria, Georgia, serif;
 }
@@ -36,7 +39,7 @@ button {
   margin-top: 1rem;
 }
 button:hover {
-  background-color: black;
+  background-color: #0984e3;
   color: white;
 }
 button:disabled {
@@ -48,4 +51,49 @@ button:disabled {
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.staffs {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  flex-wrap: wrap;
+
+  li {
+    list-style-type: none;
+    width: 20%;
+    text-align: center;
+  }
+}
+button.selected {
+  background-color: #0984e3;
+  color: #ffff;
+}
+.staff-detail {
+  width: 50%;
+  margin: auto;
+  margin-top: 24px;
+
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  > div {
+    padding: 12px 24px;
+  }
+
+  h2 {
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  input {
+    outline: none;
+    border: 2px solid #0985e37a;
+    padding: 0 4px;
+    border-radius: 4px;
+    font-size: medium;
+
+    &:hover {
+      border-color: #0984e3;
+    }
+  }
 }
