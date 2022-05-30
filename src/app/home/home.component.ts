@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { staff } from '../staff';
 import { staffs } from '../mock-staffs';
+import { StaffService } from '../staff.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-home',
@@ -8,17 +10,22 @@ import { staffs } from '../mock-staffs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private staffsService: StaffService , private messageService : MessageService) {}
 
-  public staffs = staffs;
   public SelectStaff?: staff;
- /**
-  * onSelect
-  */
- public onSelect(staff: staff) {
-   this.SelectStaff = staff;
-   console.log(this.SelectStaff)
- }
+  public staffs: staff[] = [];
 
-  ngOnInit(): void {}
+  public onSelect(staff: staff) {
+    this.SelectStaff = staff;
+    this.messageService.add(`HomeComponent : Selected staff id ${staff.id}`) 
+  }
+
+  private getStaffs(): void {
+    this.staffsService.getStaffs()
+        .subscribe(staffs => this.staffs = staffs)
+  }
+
+  ngOnInit(): void {
+    this.getStaffs();
+  }
 }
