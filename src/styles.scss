@@ -37,10 +37,13 @@ button {
   margin-right: 1rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+
+  transition: ease-in 0.25s;
 }
 button:hover {
-  background-color: #0984e3;
-  color: white;
+  transform-origin: 50 50;
+  transform: rotate(2deg);
+  transition-duration: 0.1;
 }
 button:disabled {
   background-color: #eee;
@@ -63,6 +66,11 @@ ul.staffs {
     list-style-type: none;
     width: 20%;
     text-align: center;
+
+    button {
+      width: 90%;
+      margin: 12px 0;
+    }
   }
 }
 button.selected {
