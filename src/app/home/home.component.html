@@ -1,0 +1,9 @@
+<h2>List Staffs</h2>
+<ul class="staffs">
+    <li *ngFor="let staff of staffs " >
+      <button>
+          <span class="badage"> {{ staff.id }} </span>
+          <span class="name"> {{ staff.name}} </span>
+      </button>
+    </li>
+</ul>
