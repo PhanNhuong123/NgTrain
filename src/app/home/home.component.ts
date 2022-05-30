@@ -15,11 +15,6 @@ export class HomeComponent implements OnInit {
   public SelectStaff?: staff;
   public staffs: staff[] = [];
 
-  public onSelect(staff: staff) {
-    this.SelectStaff = staff;
-    this.messageService.add(`HomeComponent : Selected staff id ${staff.id}`) 
-  }
-
   private getStaffs(): void {
     this.staffsService.getStaffs()
         .subscribe(staffs => this.staffs = staffs)

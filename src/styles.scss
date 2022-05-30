@@ -67,12 +67,30 @@ ul.staffs {
     width: 20%;
     text-align: center;
 
-    button {
+    button,
+    a {
+      display: block;
       width: 90%;
       margin: 12px 0;
+      height: 44px;
+      line-height: 44px;
+      font-weight: bold;
+
+      color: black;
+      text-decoration: none;
+      border-radius: 4px;
+
+      transition: ease-in-out 0.2s;
+      border: 1px solid #cccc;
+
+      &:hover {
+        background-color: rgba(68, 68, 68, 0.295);
+        color: white;
+      }
     }
   }
 }
+a.selected,
 button.selected {
   background-color: #0984e3;
   color: #ffff;
@@ -102,6 +120,24 @@ button.selected {
 
     &:hover {
       border-color: #0984e3;
+    }
+  }
+}
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap : wrap;
+
+  a {
+    width: 10%;
+    height: 24px ;
+    line-height: 24px;
+    text-decoration: none;
+    text-align: center;
+    &:hover{
+      background-color: rgba(68, 68, 68, 0.166);
+      border-radius: 4px;
     }
   }
 }

@@ -2,11 +2,9 @@
 
 <ul class="staffs">
   <li *ngFor="let staff of staffs">
-    <button [class.selected]="staff === SelectStaff" (click)="onSelect(staff)">
+    <a routerLink="/staffs/{{staff.id}}" [class.selected]="staff === SelectStaff">
       <span class="badage"> {{ staff.id }} </span>
       <span class="name"> {{ staff.name }} </span>
-    </button>
+    </a>
   </li>
 </ul>
-
-<app-staff-detail [staff]="SelectStaff"></app-staff-detail>
