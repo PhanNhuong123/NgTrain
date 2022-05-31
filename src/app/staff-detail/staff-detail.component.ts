@@ -21,11 +21,17 @@ export class StaffDetailComponent implements OnInit {
   public getStaff(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.staffService.getStaff(id).subscribe((staff) => (this.staff = staff));
-    console.log(this.staff)
   }
 
   public goBack(): void {
     this.location.back();
+  }
+
+  public save() :void {
+    if(this.staff) {
+      this.staffService.updateStaff(this.staff)
+        .subscribe(() => this.goBack())
+    }
   }
   // @Input() staff?: staff;
   ngOnInit(): void {

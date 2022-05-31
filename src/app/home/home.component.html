@@ -2,9 +2,21 @@
 
 <ul class="staffs">
   <li *ngFor="let staff of staffs">
-    <a routerLink="/staffs/{{staff.id}}" [class.selected]="staff === SelectStaff">
+    <a
+      routerLink="/staffs/{{ staff.id }}"
+      [class.selected]="staff === SelectStaff"
+    >
       <span class="badage"> {{ staff.id }} </span>
       <span class="name"> {{ staff.name }} </span>
     </a>
+    <button type="button" class="delete" title="delete staff" (click)="delete(staff)">x</button>
   </li>
 </ul>
+<div class="form-add-staff">
+  <label for="new-staff">Staff Name :</label> 
+  <input type="text" id="new-staff" #staffName /> 
+
+  <button type="button" (click)="add(staffName.value); staffName.value = ''" class="add-staff">
+    Add staff
+  </button>
+</div>

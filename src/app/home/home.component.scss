@@ -1,0 +1,68 @@
+button.delete {
+  position: absolute;
+  top: 12px;
+
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  background-color: #e74c3c;
+  opacity: 0.9;
+  color: white;
+}
+button.add-staff {
+  line-height: 12px;
+  padding: 8px;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+}
+ul {
+  padding: 12px 4px;
+}
+
+.form-add-staff {
+  width: 50%;
+  margin: auto;
+  padding: 24px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  label {
+    font-weight: bolder;
+  }
+
+  input {
+    height: 24px;
+    outline: none;
+    border: 1px solid #cccc;
+    border-radius: 4px;
+    width: 50%;
+    margin: 0 12px;
+    font-size: medium;
+
+    &:hover {
+      border-color: #3498db;
+    }
+
+    &:focus {
+      border-color: #3498db;
+      border-width: 2px;
+    }
+  }
+
+  button {
+    border: 1px solid #3498db;
+    background-color: #ffff;
+
+    &:hover {
+      background-color: #3498db;
+      color: #ffff;
+    }
+  }
+}
